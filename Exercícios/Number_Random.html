@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SECRETO</title>
+
+    <style>
+        body {
+           font: normal 10pt Verdana; 
+        }
+        input {
+           font: normal 8pt Verdana; 
+           width: 100px;
+        }
+        div {
+           margin-top: 15px; 
+        }
+    </style>
+
+</head>
+<body>
+    <h1>JOGO DE ADIVINHAÇÃO:</h1>
+    <p>---------------------------------------------------------------------------------</p>
+    <p>Um número secreto e aleatório, entre 1 e 10, foi gerado pelo computador!</p>
+    <p>Digite um número no campo abaixo e tente adivinhar!</p>
+    <p>---------------------------------------------------------------------------------</p>
+    <input type="button" value="JOGAR" onclick="Jogar()">
+    <div id="resp1">[-----------------------------]</div>
+    <p>---------------------------------------------------------------------------------</p>
+
+
+    <script>
+        var c = 1
+        
+        
+
+        function Jogar() {
+            while (c<=40) {
+                var NS = Math.floor(Math.random() * 10 + 1)
+                resp1.innerHTML += ` ${NS}..`
+                resp1.style.background = "magenta"
+                c=c+1
+            }
+        }
+    </script>  
+</body>
+</html>

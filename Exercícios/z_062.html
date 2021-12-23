@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONTAGEM</title>
+
+    <style>
+        body {
+           font: normal 10pt Verdana; 
+        }
+        div {
+           margin-top: 15px; 
+        }
+    </style>
+
+</head>
+<body>
+    <h1>CONTAGEM:</h1>
+    <p>---------------------------------------------------------------------------------</p>
+    <p>Clique abaixo para contar:</p>
+    <p>---------------------------------------------------------------------------------</p>
+    <input type="button" value="RESPOSTA" onclick="Contar()">
+    <div id="resp1">[-----------------------------]</div>
+    <div id="resp2">[-----------------------------]</div>
+    <div id="resp3">[-----------------------------]</div>
+    <p>---------------------------------------------------------------------------------</p>
+
+
+    <script>
+        function Contar() {
+            var c = 1
+            var P21 = 0
+            var SI = 0
+            var MI = 0
+
+            do {
+                var idade = Number(window.prompt(`${c}ª Idade: `))
+                var final = window.prompt(`Gostaria de encerrar? [S/N] `) 
+                SI=SI+idade
+                MI=SI/c
+                
+
+                if (idade>21) {
+                    P21=P21+1
+                }
+                
+
+
+                if (final=="S") {
+                    resp1.innerHTML = `Quantas idades foram digitadas? <strong>${c}</strong>`
+                    resp1.style.background = "green"
+                    resp2.innerHTML = `Qual é a média entre as idades digitadas? <strong>${MI.toFixed(2)}</strong>`
+                    resp2.style.background = "magenta"
+                    resp3.innerHTML = `Quantas pessoas tem 21 anos ou mais? <strong>${P21}</strong>`
+                    resp3.style.background = "red"
+                    return
+                }
+                c=c+1                
+            } while (c<=999999999999999999999999999999)
+
+
+
+        }
+    </script>  
+</body>
+</html>

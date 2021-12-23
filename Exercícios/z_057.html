@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SALÁRIOS</title>
+
+    <style>
+        body {
+           font: normal 10pt Verdana; 
+        }
+        input {
+           font: normal 8pt Verdana; 
+           width: 100px;
+        }
+        div {
+           margin-top: 15px; 
+        }
+    </style>
+
+</head>
+<body>
+    <h1>SALÁRIO E SEXO:</h1>
+    <p>---------------------------------------------------------------------------------</p>
+    <p>Clique abaixo e descubra algumas curiosidades:</p>
+    <p>---------------------------------------------------------------------------------</p>
+    <input type="button" value="Começar" onclick="Calcular()">
+    <div id="resp1">[-----------------------------]</div>
+    <div id="resp2">[-----------------------------]</div>
+    <p>---------------------------------------------------------------------------------</p>
+
+
+    <script>
+        var c = 1
+        
+        
+
+        function Calcular() {
+            var S = 0
+            var STF = 0
+            var STM = 0
+            
+
+            while (c<=999999999) {
+                var salario = Number(window.prompt(`${c}ª Salário: `))
+                var sexo = window.prompt(`${c}ª Sexo [F/M]: `)
+                var final = window.prompt(`Gostaria de encerrar? [S/N] `)
+                c=c+1
+
+                if (sexo=="F") {
+                    STF=STF+salario
+                } else if (sexo=="M") {
+                    STM=STM+salario
+                }
+
+                if (final=="S") {
+                resp1.style.background = "green"
+                resp2.style.background = "magenta"
+                resp1.innerHTML = `Salário Total Mulheres: <strong>${STF.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}</strong>`
+                resp2.innerHTML = `Salário Total Homens: <strong>${STM.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}</strong>`
+                return
+                }
+                
+            }
+            
+            
+        }
+    </script>  
+</body>
+</html>

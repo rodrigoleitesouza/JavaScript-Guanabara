@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TERRENO</title>
+
+    <style>
+        body {
+           font: normal 10pt Verdana; 
+        }
+        input {
+           font: normal 8pt Verdana; 
+           width: 100px;
+        }
+        div {
+           margin-top: 15px; 
+        }
+    </style>
+
+</head>
+<body>
+    <h1>CLASSIFICAÇÃO DE TERRENO:</h1>
+    <p>Digite a largura (m) e o comprimento (m) abaixo:</p>
+    <p>Largura (m): <input type="number" name="larg" id="larg"></p>
+    <p>Comprimento (m): <input type="number" name="comp" id="comp"></p>
+    <input type="button" value="VERIFICAR" onclick="Verificar()">
+    <div id="resp1">[-----------------------------]</div>
+    <div id="resp2">[-----------------------------]</div>
+
+    <script>
+        function Verificar() {
+            var larg = Number(window.document.getElementById("larg").value)
+            var comp = Number(window.document.getElementById("comp").value)
+            var area = (larg*comp)
+
+            if (area<100) {
+                resp1.innerHTML = `Área = ${area}`
+                resp2.innerHTML = `[Terreno <strong>POPULAR</strong>]`  
+                resp2.style.background = "yellow"  
+            } else if (area>500) {
+                resp1.innerHTML = `Área = ${area}`
+                resp2.innerHTML = `[Terreno <strong>VIP</strong>]`  
+                resp2.style.background = "pink"         
+            } else {
+                resp1.innerHTML = `Área = ${area}`
+                resp2.innerHTML = `[Terreno <strong>MASTER</strong>]`  
+                resp2.style.background = "grey"
+            }
+        }
+    </script>  
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            font: normal 20pt Verdana; 
+
+        }
+    </style>
+
+</head>
+<body>
+    <script>
+        var salário = Number(window.prompt("Salário: "));
+        var NS = (salário*1.15)
+
+        document.write("========================================================<br/>");
+        document.write(`Salário sem aumento: ${salário.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}<br/>`);
+        document.write("========================================================<br/>");
+        document.write(`Salário com aumento de 15%: ${NS.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}<br/>`);
+        document.write("========================================================<br/>");
+    </script>
+</body>
+</html>

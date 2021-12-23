@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>091</title>
+
+    <style>
+        body {
+           font: normal 10pt Verdana; 
+        }
+        div {
+           margin-top: 15px; 
+        }
+    </style>
+
+</head>
+<body>
+    <p>---------------------------------------------------------------------------------</p>
+    <h1>EXERCÍCIO 091:</h1>
+    <p>---------------------------------------------------------------------------------</p>
+    <p>FUNÇÕES:</p>
+    <p>---------------------------------------------------------------------------------</p>
+    <p>Clique abaixo para iniciar:</p>
+    <p>---------------------------------------------------------------------------------</p>
+    <p>1º NÚMERO: <input type="number" name="N1" id="N1"></p>
+    <p>2º NÚMERO: <input type="number" name="N2" id="N2"></p>
+    <p>---------------------------------------------------------------------------------</p>
+    <p><input type="button" value="START" onclick="Gerador()"></p>
+    <p>---------------------------------------------------------------------------------</p>
+    <div id="resp1">[-----------------------------]</div>
+    <p>---------------------------------------------------------------------------------</p>
+
+
+    <script>
+        function Gerador() {
+            var N1 = document.getElementById("N1")
+            var N2 = document.getElementById("N2")
+            var n1 = Number(document.getElementById("N1").value)
+            var n2 = Number(document.getElementById("N2").value)
+
+            if (N1.value.length == 0 || N2.value.length == 0) {
+                resp1.innerHTML = `[ERROR] Digite valores válidos!`                 
+            } else if (n1>n2) {
+                resp1.innerHTML = `O 1º número [${n1}] é maior do que o 2º número [${n2}]` 
+            } else if (n1<n2) {
+                resp1.innerHTML = `O 2º número [${n2}] é maior do que o 1º número [${n1}]`
+            } else if (n1==n2) {
+                resp1.innerHTML = `Os números escolhidos são iguais.`
+            }
+            resp1.style.background = "yellow"
+        }
+    </script>  
+</body>
+</html>

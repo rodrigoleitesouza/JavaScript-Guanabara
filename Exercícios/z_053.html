@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IDADE 2</title>
+
+    <style>
+        body {
+           font: normal 10pt Verdana; 
+        }
+        div {
+           margin-top: 15px; 
+        }
+    </style>
+
+</head>
+<body>
+    <h1>LEITOR DE IDADES 2:</h1>
+    <p>---------------------------------------------------------------------------------</p>
+    <p>Clique abaixo para descobrir algumas curiosidades sobre as informações digitadas:</p>
+    <p>---------------------------------------------------------------------------------</p>
+    <input type="button" value="CLIQUE AQUI" onclick="Contar()">
+    <p>---------------------------------------------------------------------------------</p>
+    <div id="resp0">[-----------------------------]</div>
+    <p>---------------------------------------------------------------------------------</p>
+    <div id="resp1">[-----------------------------]</div>
+    <div id="resp2">[-----------------------------]</div>
+    <div id="resp3">[-----------------------------]</div>
+    <div id="resp4">[-----------------------------]</div>
+    <div id="resp5">[-----------------------------]</div>
+    <p>---------------------------------------------------------------------------------</p>
+
+
+    <script>
+        function Contar() {
+            var c = 1
+            var QF = 0
+            var QM = 0
+            var MI = 0
+            var SI = 0
+            var MIM = 0
+            var SIM = 0
+            var F20 = 0
+
+            resp0.innerHTML = ` `
+            while (c<=5) {
+                var sexo = window.prompt(`${c}º Sexo [F/M]: `)
+                var idade = Number(window.prompt(`${c}º Idade: `))
+
+
+                SI=SI+idade
+                MI=(SI/c)
+
+                if (sexo=="F") {
+                    QF=QF+1
+                    resp0.innerHTML += ` Feminino:[${idade}] `
+                    if (idade>20) {
+                        F20=F20+1
+                    }
+                } else if (sexo=="M") {
+                    resp0.innerHTML += ` Masculino:[${idade}] `
+                    QM=QM+1
+                    SIM=SIM+idade
+                    MIM=SIM/c
+                }
+                c=c+1
+            }
+            
+            resp1.innerHTML = `Quantos homens foram cadastrados? <strong>${QM}</strong> homem(ns)`
+            resp2.innerHTML = `Quantas mulheres foram cadastradas? <strong>${QF}</strong> mulher(es)`
+            resp3.innerHTML = `Média de todas as idades: <strong>${MI}</strong> ano(s)`
+            resp4.innerHTML = `Média da idade dos homens: <strong>${MIM}</strong> ano(s)`
+            resp5.innerHTML = `Quantas mulheres tem mais de 20 anos? <strong>${F20}</strong> mulher(es)`
+
+        }
+    </script>  
+</body>
+</html>

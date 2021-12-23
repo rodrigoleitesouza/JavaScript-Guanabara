@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MÉDIA</title>
+
+    <style>
+        body {
+           font: normal 10pt Verdana; 
+        }
+        input {
+           font: normal 8pt Verdana; 
+           width: 100px;
+        }
+        div {
+           margin-top: 15px; 
+        }
+    </style>
+
+</head>
+<body>
+    <h1>CALCULO DE MÉDIA:</h1>
+    <p>Digite abaixo as notas do aluno para calcular a média:</p>
+    <p>Nota AV1: <input type="number" name="av1" id="av1"></p>
+    <p>Nota AV2: <input type="number" name="av2" id="av2"></p>
+    <input type="button" value="VERIFICAR" onclick="Calcular()">
+    <div id="resp1">[-----------------------------]</div>
+    <div id="resp2">[-----------------------------]</div>
+
+    <script>
+        function Calcular() {
+            var av1 = Number(window.document.getElementById("av1").value)
+            var av2 = Number(window.document.getElementById("av2").value)
+            var media = ((av1+av2)/2)
+          
+            if (media<5) {
+                resp1.innerHTML = `Média = ${media}`
+                resp2.innerHTML = `[O aluno está <strong>REPROVADO</strong>]`  
+                resp2.style.background = "yellow"  
+            } else if (media>=5 && media<7) {
+                resp1.innerHTML = `Média = ${media}`
+                resp2.innerHTML = `[O aluno está de <strong>RECUPERAÇÃO</strong>]`  
+                resp2.style.background = "pink"         
+            } else {
+                resp1.innerHTML = `Média = ${media}`
+                resp2.innerHTML = `[O aluno está <strong>APROVADO</strong>]`  
+                resp2.style.background = "grey"
+            }
+        }
+    </script>  
+</body>
+</html>

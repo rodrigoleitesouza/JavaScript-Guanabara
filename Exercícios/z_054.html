@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PESO E ALTURA</title>
+
+    <style>
+        body {
+           font: normal 10pt Verdana; 
+        }
+        div {
+           margin-top: 15px; 
+        }
+    </style>
+
+</head>
+<body>
+    <h1>LEITOR DE PESO E ALTURA:</h1>
+    <p>---------------------------------------------------------------------------------</p>
+    <p>Clique abaixo para descobrir algumas curiosidades sobre as informações digitadas:</p>
+    <p>---------------------------------------------------------------------------------</p>
+    <input type="button" value="CLIQUE AQUI" onclick="Contar()">
+    <p>---------------------------------------------------------------------------------</p>
+    <div id="resp0">[-----------------------------]</div>
+    <p>---------------------------------------------------------------------------------</p>
+    <div id="resp1">[-----------------------------]</div>
+    <div id="resp2">[-----------------------------]</div>
+    <div id="resp3">[-----------------------------]</div>
+    <div id="resp4">[-----------------------------]</div>
+    <p>---------------------------------------------------------------------------------</p>
+
+
+    <script>
+        function Contar() {
+            var c = 1
+            var SA = 0
+            var MA = 0
+            var QP90 = 0
+            var QP50 = 0
+
+
+            resp0.innerHTML = ` `
+            while (c<=7) {
+                var altura = Number(window.prompt(`${c}º Altura (cm): `))
+                var peso = Number(window.prompt(`${c}º Peso (kg): `))
+                SA=SA+altura
+                MA=SA/c
+
+                if (peso>90) {
+                    QP90=QP90+1
+                } else if (peso<50 && altura<160) {
+                    QP50=QP50+1
+                }
+                c=c+1
+            }
+            
+            resp1.innerHTML = `Qual foi a média de altura do grupo? <strong>${MA}</strong> cm`
+            resp2.innerHTML = `Quantas pessoas pesam mais de 90Kg? <strong>${QP90}</strong> pessoa(s)`
+            resp3.innerHTML = `Quantas pessoas que pesam menos de 50Kg tem menos de 1.60m? <strong>${QP50}</strong> ano(s)`
+
+        }
+    </script>  
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONTAGEM</title>
+
+    <style>
+        body {
+           font: normal 10pt Verdana; 
+        }
+        div {
+           margin-top: 15px; 
+        }
+    </style>
+
+</head>
+<body>
+    <h1>CONTAGEM:</h1>
+    <p>---------------------------------------------------------------------------------</p>
+    <p>Digite abaixo até que número gostaria de contar.</p>
+    <p>---------------------------------------------------------------------------------</p>
+    <p>Final da contagem: <input type="number" name="final" id="final"></p>
+    <input type="button" value="CONTAR" onclick="Contar()">
+    <div id="resp">[-----------------------------]</div>
+    <p>---------------------------------------------------------------------------------</p>
+
+
+    <script>
+        function Contar() {
+            var c = 1
+            resp.innerHTML = ``
+            var final = Number(document.getElementById("final").value)
+
+            while (final>=c) {
+                resp.innerHTML += ` ${c}..`
+                c=c+1
+            }
+            resp.innerHTML += ` FIM!`
+
+
+        }
+    </script>  
+</body>
+</html>

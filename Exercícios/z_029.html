@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SALÁRIO</title>
+
+    <style>
+        body {
+           font: normal 10pt Verdana; 
+        }
+        input {
+           font: normal 8pt Verdana; 
+           width: 100px;
+        }
+        div {
+           margin-top: 15px; 
+        }
+    </style>
+
+</head>
+<body>
+    <h1>CALCULO DO NOVO SALÁRIO:</h1>
+    <p>Digite os valores indicados abaixo:</p>
+    <p>Nome: <input type="text" name="nome" id="nome"></p>
+    <p>Salário Atual (R$): <input type="number" name="SA" id="SA"></p>
+    <p>Tempo de Empresa (anos): <input type="number" name="tempo" id="tempo"></p>
+
+    <input type="button" value="VERIFICAR" onclick="Verificar()">
+    <div id="resp1">[-----------------------------]</div>
+
+
+    <script>
+        function Verificar() {
+            var SA = Number(window.document.getElementById("SA").value)
+            var anos = Number(window.document.getElementById("tempo").value)
+
+            if (anos<=3) {
+                var NS = (SA*1.030)
+                resp1.innerHTML = `Novo Salário = ${NS.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}` 
+                resp1.style.background = "yellow"  
+            } else if (anos>=10) {
+                var NS = (SA*1.200)
+                resp1.innerHTML = `Novo Salário = ${NS.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}` 
+                resp1.style.background = "pink"         
+            } else {
+                var NS = (SA*1.125)
+                resp1.innerHTML = `Novo Salário = ${NS.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}` 
+                resp1.style.background = "grey"
+            }
+        }
+    </script>  
+</body>
+</html>

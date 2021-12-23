@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>085</title>
+
+    <style>
+        body {
+           font: normal 10pt Verdana; 
+        }
+        div {
+           margin-top: 15px; 
+        }
+    </style>
+
+</head>
+<body>
+    <p>---------------------------------------------------------------------------------</p>
+    <h1>EXERCÍCIO 085:</h1>
+    <p>---------------------------------------------------------------------------------</p>
+    <p>VETOR E ARRAY:</p>
+    <p>---------------------------------------------------------------------------------</p>
+    <p>Clique abaixo para iniciar:</p>
+    <p>---------------------------------------------------------------------------------</p>
+    <input type="button" value="START" onclick="Contar()">
+    <div id="resp1">[-----------------------------]</div>
+    <p>---------------------------------------------------------------------------------</p>
+
+
+    <script>
+        function Contar() {
+            var c = 0
+            var nome = []
+            var sexo = []
+            var salario = []
+            resp1.innerHTML = ` `
+
+
+                for (c;c<=2;c++) {
+                    nome.push(window.prompt(`${c+1}º Nome: `))  
+                    sexo.push(window.prompt(`${c+1}º Sexo [F/M]: `)) 
+                    salario.push(Number(window.prompt(`${c+1}º Salário: `)))  
+
+                    if (sexo[c]=="F" && salario[c]>5000) {
+                    resp1.innerHTML += `Nome: <strong>${nome[c]}</strong> | Salário: <strong>${salario[c].toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}</strong> | Sexo: <strong>${sexo[c]}</strong> </br>` 
+                    resp1.style.background = "yellow"
+                    }
+                }
+
+
+                
+        }
+    </script>  
+</body>
+</html>

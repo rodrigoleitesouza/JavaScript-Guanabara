@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BISSEXTO</title>
+
+    <style>
+        body {
+           font: normal 10pt Verdana; 
+        }
+        input {
+           font: normal 8pt Verdana; 
+           width: 100px;
+        }
+        div {
+           margin-top: 25px; 
+        }
+    </style>
+
+</head>
+<body>
+    <h1>BISSEXTO:</h1>
+    <p>Digite o ano desejado no campo abaixo:</p>
+    <p>Ano: <input type="number" name="ano" id="ano"></p>
+    <input type="button" value="VERIFICAR" onclick="Verificar()">
+    <div id="resp">[-----------------------------]</div>
+
+    <script>
+        function Verificar() {
+            var ano = Number(window.document.getElementById("ano").value)
+            var resp = window.document.getElementById("resp")
+            if (ano%4==0) {
+                resp.innerHTML = `[O ano digitado (${ano}) é <strong>BISSEXTO!</strong>]`  
+                resp.style.background = "yellow"  
+            } else {
+                resp.innerHTML = `[O ano digitado (${ano}) NÃO é <strong>BISSEXTO!</strong>]`  
+                resp.style.background = "pink"         
+            }
+        }
+    </script>  
+</body>
+</html>

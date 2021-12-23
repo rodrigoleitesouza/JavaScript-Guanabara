@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALISTAMENTO</title>
+
+    <style>
+        body {
+           font: normal 10pt Verdana; 
+        }
+        input {
+           font: normal 8pt Verdana; 
+           width: 100px;
+        }
+        div {
+           margin-top: 25px; 
+        }
+    </style>
+
+</head>
+<body>
+    <h1>ALISTAMENTO MILITAR:</h1>
+    <p>Digite seu ano de nascimento no campo abaixo:</p>
+    <p>Ano: <input type="number" name="nasc" id="nasc"></p>
+    <input type="button" value="VERIFICAR" onclick="Verificar()">
+    <div id="resp">[-----------------------------]</div>
+
+    <script>
+        function Verificar() {
+            var data = new Date()
+            var ano = data.getFullYear()
+            var nasc = Number(window.document.getElementById("nasc").value)
+            var idade = (ano-nasc)
+            var resp = window.document.getElementById("resp")
+            if (idade>=18) {
+                resp.innerHTML = `[Já se passaram ${idade-18} anos do seu alistamento militar]`  
+                resp.style.background = "yellow"  
+            } else {
+                resp.innerHTML = `[Ainda faltam ${18-idade} anos para o seu alistamento militar]`  
+                resp.style.background = "pink"         
+            }
+        }
+    </script>  
+</body>
+</html>

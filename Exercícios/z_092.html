@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>092</title>
+
+    <style>
+        body {
+           font: normal 10pt Verdana; 
+        }
+        div {
+           margin-top: 15px; 
+        }
+    </style>
+
+</head>
+<body>
+    <p>---------------------------------------------------------------------------------</p>
+    <h1>EXERCÍCIO 092:</h1>
+    <p>---------------------------------------------------------------------------------</p>
+    <p>FUNÇÕES:</p>
+    <p>---------------------------------------------------------------------------------</p>
+    <p>Clique abaixo para iniciar:</p>
+    <p>---------------------------------------------------------------------------------</p>
+    <p>NÚMERO: <input type="number" name="N1" id="N1"></p>
+    <p>---------------------------------------------------------------------------------</p>
+    <p><input type="button" value="START" onclick="Gerador()"></p>
+    <p>---------------------------------------------------------------------------------</p>
+    <div id="resp1">[-----------------------------]</div>
+    <p>---------------------------------------------------------------------------------</p>
+
+
+    <script>
+        function Gerador() {
+            var N1 = Number(document.getElementById("N1").value)
+            var n1 = document.getElementById("N1")
+
+            if (n1.value.length == 0) {
+                resp1.innerHTML = `[ERROR] Digite um valor válido!`                 
+            } else if (N1%2==0) {
+                resp1.innerHTML = `O número é <strong>PAR!</strong>` 
+            } else if (N1%2==1) {
+                resp1.innerHTML = `O número é <strong>ÍMPAR!</strong>` 
+            }
+            resp1.style.background = "yellow"
+        }
+    </script>  
+</body>
+</html>

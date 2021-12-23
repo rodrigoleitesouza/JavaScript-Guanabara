@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COMPARADOR</title>
+
+    <style>
+        body {
+           font: normal 10pt Verdana; 
+        }
+        input {
+           font: normal 8pt Verdana; 
+           width: 100px;
+        }
+        div {
+           margin-top: 15px; 
+        }
+    </style>
+
+</head>
+<body>
+    <h1>COMPARADOR DE NÚMEROS:</h1>
+    <p>Digite abaixo os números que deseja comparar:</p>
+    <p>1º número: <input type="number" name="n1" id="n1"></p>
+    <p>2º número: <input type="number" name="n2" id="n2"></p>
+    <input type="button" value="VERIFICAR" onclick="Verificar()">
+    <div id="resp">[-----------------------------]</div>
+
+    <script>
+        function Verificar() {
+            var n1 = Number(window.document.getElementById("n1").value)
+            var n2 = Number(window.document.getElementById("n2").value)
+            var resp = window.document.getElementById("resp")
+            if (n1>n2) {
+                resp.innerHTML = `[O número <strong>${n1}</strong> é maior do que <strong>${n2}</strong>]`  
+                resp.style.background = "yellow"  
+            } else if (n2>n1) {
+                resp.innerHTML = `[O número <strong>${n1}</strong> é menor do que <strong>${n2}</strong>]` 
+                resp.style.background = "pink"         
+            } else {
+                resp.innerHTML = `[Os números digitados são <strong>iguais</strong>]`
+                resp.style.background = "grey"
+            }
+        }
+    </script>  
+</body>
+</html>

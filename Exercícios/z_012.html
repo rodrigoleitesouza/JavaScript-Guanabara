@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            font: normal 20pt Verdana; 
+
+        }
+    </style>
+
+</head>
+<body>
+    <script>
+        var A = Number(window.prompt("Preço: "));
+        var PP = (A*0.95)
+        var hora = (new Date().getTime())
+
+        document.write("========================================================<br/>");
+        document.write(`Preço sem desconto: ${A.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}<br/>`);
+        document.write("========================================================<br/>");
+        document.write(`Preço PROMOCIONAL (5%): ${PP.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}<br/>`);
+        document.write("========================================================<br/>");
+        document.write(`Agora são ${hora} horas.<br/>`);
+        document.write("========================================================<br/>");
+        if (A<1000) {
+            document.write("O produto custa menos de 1000 reais.<br/>");
+            document.write("========================================================<br/>");
+        } else if (A==1000) {
+            document.write("O produto custa 1000 reais.<br/>");
+            document.write("========================================================<br/>");
+        } else {
+            document.write("O produto custa mais de 1000 reais.<br/>");
+            document.write("========================================================<br/>");
+        }
+    </script>
+</body>
+</html>

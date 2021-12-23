@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>089</title>
+
+    <style>
+        body {
+           font: normal 10pt Verdana; 
+        }
+        div {
+           margin-top: 15px; 
+        }
+    </style>
+
+</head>
+<body>
+    <p>---------------------------------------------------------------------------------</p>
+    <h1>EXERCÍCIO 089:</h1>
+    <p>---------------------------------------------------------------------------------</p>
+    <p>FUNÇÕES:</p>
+    <p>---------------------------------------------------------------------------------</p>
+    <p>Clique abaixo para iniciar:</p>
+    <p>---------------------------------------------------------------------------------</p>
+    <p><input type="radio" name="borda" id="borda1" checked> <label for="">+-------=======------+</label></p>
+    <p><input type="radio" name="borda" id="borda2"> <label for="">~~~~~~~~:::::::~~~~~~~</label></p>
+    <p><input type="radio" name="borda" id="borda3"> <label for="">++++++++++++++++++++++</label></p>
+    <p>---------------------------------------------------------------------------------</p>
+    <p><input type="button" value="START" onclick="Gerador()"></p>
+    <p>---------------------------------------------------------------------------------</p>
+    <div id="resp1">[-----------------------------]</div>
+    <div id="resp2">[-----------------------------]</div>
+    <div id="resp3">[-----------------------------]</div>
+    <p>---------------------------------------------------------------------------------</p>
+
+
+    <script>
+        function Gerador() {
+            var borda = document.getElementsByName("borda")
+            var c = 1
+            var x = window.prompt("Digite sua mensagem aqui: ")
+            var r = Number(window.prompt("Quantas vezes gostaria de repetir sua mensagem? "))
+            resp2.innerHTML = ` `
+
+            if (borda[0].checked) {
+                resp1.innerHTML = `+-------=======------+`
+                resp3.innerHTML = `+-------=======------+` 
+            } else if (borda[1].checked) {
+                resp1.innerHTML = `~~~~~~~~:::::::~~~~~~~`
+                resp3.innerHTML = `~~~~~~~~:::::::~~~~~~~` 
+            } else if (borda[2].checked) {
+                resp1.innerHTML = `++++++++++++++++++++++`
+                resp3.innerHTML = `++++++++++++++++++++++` 
+            }
+            
+
+            for (c;c<=r;c++) {
+                resp2.innerHTML += `${x}!</br>`
+
+            }
+
+
+
+
+            resp1.style.background = "yellow"
+            resp2.style.background = "yellow"
+            resp3.style.background = "yellow"     
+        }
+    </script>  
+</body>
+</html>

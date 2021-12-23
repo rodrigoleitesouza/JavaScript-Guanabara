@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JoKenPo</title>
+
+    <style>
+        body {
+           font: normal 10pt Verdana; 
+        }
+        input {
+           font: normal 8pt Verdana; 
+           width: 100px;
+        }
+        div {
+           margin-top: 15px; 
+        }
+    </style>
+
+</head>
+<body>
+    <h1>JOGO DE JOKENPO:</h1>
+    <p>---------------------------------------------------------------------------------</p>
+    <p>[1] Pedra</p>
+    <p>[2] Papel</p>
+    <p>[3] Tesoura</p>
+    <p>---------------------------------------------------------------------------------</p>
+    <p>1º JOGADOR: <input type="number" name="J1" id="J1"></p>
+    <p>2º JOGADOR: <input type="number" name="J2" id="J2"></p>
+    <p>---------------------------------------------------------------------------------</p>
+    <input type="button" value="JOGAR" onclick="Jogar()">
+    <div id="resp1">[-----------------------------]</div>
+    <p>---------------------------------------------------------------------------------</p>
+
+    <script>
+        function Jogar() {
+            var J1 = Number(window.document.getElementById("J1").value)
+            var J2 = Number(window.document.getElementById("J2").value)
+            var resp1 = window.document.getElementById("resp1")
+            if (J1==J2) {
+                resp1.innerHTML = `[EMPATE]`
+                resp1.style.background = "yellow"
+            } else if (J1==1 && J2==2) {
+                resp1.innerHTML = `[Jogador 2 venceu, pois PAPEL ganha de PEDRA!]`
+                resp1.style.background = "magenta"  
+            } else if (J1==1 && J2==3) {
+                resp1.innerHTML = `[Jogador 1 venceu, pois PEDRA ganha de TESOURA!]`
+                resp1.style.background = "magenta"  
+            } else if (J1==2 && J2==1) {
+                resp1.innerHTML = `[Jogador 1 venceu, pois PAPEL ganha de PEDRA!]`
+                resp1.style.background = "magenta"  
+            } else if (J1==2 && J2==3) {
+                resp1.innerHTML = `[Jogador 2 venceu, pois TESOURA ganha de PAPEL!]`
+                resp1.style.background = "magenta"  
+            } else if (J1==3 && J2==1) {
+                resp1.innerHTML = `[Jogador 2 venceu, pois PEDRA ganha de TESOURA!]`
+                resp1.style.background = "magenta"  
+            } else if (J1==3 && J2==2) {
+                resp1.innerHTML = `[Jogador 1 venceu, pois TESOURA ganha de PAPEL!]`
+                resp1.style.background = "magenta"  
+            }          
+        }
+    </script>  
+</body>
+</html>

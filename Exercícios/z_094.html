@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>094</title>
+
+    <style>
+        body {
+           font: normal 10pt Verdana; 
+        }
+        div {
+           margin-top: 15px; 
+        }
+    </style>
+
+</head>
+<body>
+    <p>---------------------------------------------------------------------------------</p>
+    <h1>EXERCÍCIO 094:</h1>
+    <p>---------------------------------------------------------------------------------</p>
+    <p>FUNÇÕES:</p>
+    <p>---------------------------------------------------------------------------------</p>
+    <p>Clique abaixo para iniciar:</p>
+    <p>---------------------------------------------------------------------------------</p>
+    <p>Número: <input type="number" name="fibo" id="fibo"></p>
+    <p><input type="button" value="START" onclick="Gerador()"></p>
+    <p>---------------------------------------------------------------------------------</p>
+    <div id="resp1">[-----------------------------]</div>
+    <p>---------------------------------------------------------------------------------</p>
+
+
+    <script>
+        function Gerador() {
+            var fibo = Number(document.getElementById("fibo").value)
+            var c = 1
+            var N1 = 0
+            var N2 = 1
+            var N3 = N2+N1
+            resp1.innerHTML = " "
+            resp1.innerHTML += ` <strong>${N1}</strong>..`
+            resp1.innerHTML += ` <strong>${N2}</strong>..`
+
+            for (c;c<=(fibo-2);c++) {
+                N1=N2
+                N2=N3
+                N3=N2+N1
+                resp1.innerHTML += ` <strong>${N3}</strong>..`
+
+            }
+            resp1.innerHTML += ` <strong>FIM!</strong>`
+            resp1.style.background = "yellow"
+
+            
+            
+ 
+        }
+    </script>  
+</body>
+</html>

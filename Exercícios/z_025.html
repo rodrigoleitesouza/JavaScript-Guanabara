@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRIÂNGULO</title>
+
+    <style>
+        body {
+           font: normal 10pt Verdana; 
+        }
+        input {
+           font: normal 8pt Verdana; 
+           width: 100px;
+        }
+        div {
+           margin-top: 15px; 
+        }
+    </style>
+
+</head>
+<body>
+    <h1>FORMAÇÃO DE TRIÂNGULO:</h1>
+    <p>Digite abaixo o comprimento (cm) dos lados de um triângulo qualquer:</p>
+    <p>Lado 1 (cm): <input type="number" name="lado1" id="lado1"></p>
+    <p>Lado 2 (cm): <input type="number" name="lado2" id="lado2"></p>
+    <p>Lado 3 (cm): <input type="number" name="lado3" id="lado3"></p>
+    <input type="button" value="VERIFICAR" onclick="Verificar()">
+    <div id="resp">[-----------------------------]</div>
+
+    <script>
+        function Verificar() {
+            var lado1 = Number(window.document.getElementById("lado1").value)
+            var lado2 = Number(window.document.getElementById("lado2").value)
+            var lado3 = Number(window.document.getElementById("lado3").value)
+            var resp = window.document.getElementById("resp")
+            if (lado1+lado2>lado3 && lado1+lado3>lado2 && lado2+lado3>lado1) {
+                resp.innerHTML = `[É possível formar um triângulo com os valores escolhidos!]`  
+                resp.style.background = "yellow"  
+            } else {
+                resp.innerHTML = `[Não é possível formar um triângulo com os valores escolhidos!]`  
+                resp.style.background = "pink"         
+            }
+        }
+    </script>  
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>082</title>
+
+    <style>
+        body {
+           font: normal 10pt Verdana; 
+        }
+        div {
+           margin-top: 15px; 
+        }
+    </style>
+
+</head>
+<body>
+    <h1>VETOR E ARRAY:</h1>
+    <p>---------------------------------------------------------------------------------</p>
+    <p>Clique abaixo para adicionar algumas notas:</p>
+    <p>---------------------------------------------------------------------------------</p>
+    <input type="button" value="START" onclick="Contar()">
+    <div id="resp1">[-----------------------------]</div>
+    <div id="resp2">[-----------------------------]</div>
+    <div id="resp3">[-----------------------------]</div>
+    <div id="resp4">[-----------------------------]</div>
+    <p>---------------------------------------------------------------------------------</p>
+
+
+    <script>
+        function Contar() {
+            var SN = 0
+            var M = 0
+            var QA = 0
+            var PMN = 0
+            var MaiorN = 0
+            var nota = []
+            var c = 0
+            var z = 0
+
+                for (c;c<=9;c++) {
+                    nota.push(Number(window.prompt(`${c+1}ª Nota: `)))
+
+                    SN=SN+nota[c]
+                    
+                    if (MaiorN<nota[c]) {
+                        MaiorN=nota[c]
+                        PMN=c
+                    }
+                } 
+                M=SN/c
+
+                for (z;z<=9;z++) {
+                    if (nota[z]>M) {
+                        QA=QA+1
+                    }
+                }
+
+                
+                resp1.innerHTML = `Média: <strong>${M.toFixed(2)}</strong>`
+                resp1.style.background = "magenta"
+                resp2.innerHTML = `Quantos alunos estão acima da média? <strong>${QA}</strong>`
+                resp2.style.background = "yellow"
+                resp3.innerHTML = `Qual é a maior nota digitada? <strong>${MaiorN}</strong>`
+                resp3.style.background = "magenta"
+                resp4.innerHTML = `Qual a posição da maior nota? <strong>${PMN}</strong>`
+                resp4.style.background = "yellow"
+        }
+    </script>  
+</body>
+</html>

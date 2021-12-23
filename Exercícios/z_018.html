@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VOTAR</title>
+
+    <style>
+        body {
+           font: normal 10pt Verdana; 
+        }
+        input {
+           font: normal 8pt Verdana; 
+           width: 100px;
+        }
+        div#res {
+           margin-top: 20px; 
+        }
+    </style>
+
+</head>
+<body>
+    <h1>VOTAR</h1>
+    <p>Digite seu ano de nascimento abaixo:</p>
+    <input type="number" name="nasc" id="nasc">
+    <input type="button" value="VERIFICAR" onclick="Verificar()">
+    <div id="res">[-----------------------------]</div>
+
+    <script>
+        function Verificar() {
+            var nasc = Number(window.document.getElementById("nasc").value)
+            var data = new Date()
+            var ano = data.getFullYear()
+            var idade = (ano-nasc)
+            var res = window.document.getElementById("res")
+            if (idade>15) {
+                res.innerHTML = `[Você tem <strong>${idade} anos</strong> e pode votar]`    
+            } else {
+                res.innerHTML = `[Você tem <strong>${idade} anos</strong> e <strong>NÃO</strong> pode votar]`      
+            }
+        }
+    </script>  
+</body>
+</html>

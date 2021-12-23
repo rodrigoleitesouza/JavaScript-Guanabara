@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SECRETO</title>
+
+    <style>
+        body {
+           font: normal 10pt Verdana; 
+        }
+        input {
+           font: normal 8pt Verdana; 
+           width: 100px;
+        }
+        div {
+           margin-top: 15px; 
+        }
+    </style>
+
+</head>
+<body>
+    <h1>JOGO DE ADIVINHAÇÃO:</h1>
+    <p>---------------------------------------------------------------------------------</p>
+    <p>Um número secreto e aleatório, entre 1 e 5, foi gerado pelo computador!</p>
+    <p>Digite um número no campo abaixo e tente adivinhar!</p>
+    <p>---------------------------------------------------------------------------------</p>
+    <p>Seu número: <input type="number" name="num" id="num"></p>
+    <p>---------------------------------------------------------------------------------</p>
+    <input type="button" value="JOGAR" onclick="Jogar()">
+    <div id="resp1">[-----------------------------]</div>
+    <div id="resp2">[-----------------------------]</div>
+    <p>---------------------------------------------------------------------------------</p>
+
+
+    <script>
+        
+        
+
+        function Jogar() {
+            var NS = Math.floor(Math.random() * 5 + 1)
+            var num = Number(window.document.getElementById("num").value) 
+            if (num==NS) {
+                resp1.innerHTML = `Você <strong>ACERTOU</strong> :D`
+                resp1.style.background = "yellow"
+                resp2.innerHTML = `O número secreto é ${NS}`
+                resp2.style.background = "magenta"
+            } else if (num!=NS) {
+                resp1.innerHTML = `Você <strong>ERROU</strong> :(`
+                resp1.style.background = "yellow"
+                resp2.innerHTML = `O número secreto é ${NS}`
+                resp2.style.background = "magenta"
+            }
+        }
+    </script>  
+</body>
+</html>

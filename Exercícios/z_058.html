@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MÉDIA DAS IDADES</title>
+
+    <style>
+        body {
+           font: normal 10pt Verdana; 
+        }
+        input {
+           font: normal 8pt Verdana; 
+           width: 100px;
+        }
+        div {
+           margin-top: 15px; 
+        }
+    </style>
+
+</head>
+<body>
+    <h1>MÉDIA DAS IDADES:</h1>
+    <p>---------------------------------------------------------------------------------</p>
+    <p>Clique abaixo para determinar a média da idades inseridas:</p>
+    <p>---------------------------------------------------------------------------------</p>
+    <input type="button" value="Começar" onclick="Calcular()">
+    <div id="resp1">[-----------------------------]</div>
+    <div id="resp2">[-----------------------------]</div>
+    <p>---------------------------------------------------------------------------------</p>
+
+
+    <script>
+        var c = 1
+        
+        
+
+        function Calcular() {
+            var S = 0
+            var SI = 0
+            var MI = 0
+            var QA = 0
+            
+
+            while (c<=999999999) {
+                var idade = Number(window.prompt(`${c}ª Idade: `))
+                
+
+
+                if (idade==999) {
+                resp1.style.background = "green"
+                resp2.style.background = "magenta"
+                resp1.innerHTML = `Quantidade de Alunos: <strong>${QA}</strong>`
+                resp2.innerHTML = `Média das Idades: <strong>${MI.toFixed(2)}</strong>`
+                return
+                }
+
+                SI=SI+idade
+                MI=SI/c
+                QA=QA+1
+                c=c+1
+                
+            }
+            
+            
+        }
+    </script>  
+</body>
+</html>

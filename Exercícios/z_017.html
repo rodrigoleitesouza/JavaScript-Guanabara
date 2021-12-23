@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MULTAS</title>
+
+    <style>
+        body {
+           font: normal 10pt Verdana; 
+        }
+        input {
+           font: normal 8pt Verdana; 
+           width: 100px;
+        }
+        div#res {
+           margin-top: 20px; 
+        }
+    </style>
+
+</head>
+<body>
+    <h1>VERIFICADOR DE MULTAS</h1>
+    <p>Digite a velocidade (km/h) no campo abaixo:</p>
+    <input type="number" name="vel" id="vel">
+    <input type="button" value="VERIFICAR" onclick="Verificar()">
+    <div id="res">[-----------------------------]</div>
+
+    <script>
+        function Verificar() {
+            var vel = Number(window.document.getElementById("vel").value)
+            var res = window.document.getElementById("res")
+            if (vel>80) {
+                var multa = ((vel-80)*5)
+                res.innerHTML = `[Você foi multado em <strong>${multa.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}</strong>]`    
+            } else {
+                res.innerHTML = `[Você está dentro do limite de velocidade permitido]`      
+            }
+        }
+    </script>  
+</body>
+</html>

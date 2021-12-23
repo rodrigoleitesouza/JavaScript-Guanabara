@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RANDOM</title>
+
+    <style>
+        body {
+           font: normal 10pt Verdana; 
+        }
+        div {
+           margin-top: 15px; 
+        }
+    </style>
+
+</head>
+<body>
+    <h1>NÚMEROS ALEATÓRIOS:</h1>
+    <p>---------------------------------------------------------------------------------</p>
+    <p>Clique abaixo para sortear 20 números aleatórios entre 0 e 10:</p>
+    <p>---------------------------------------------------------------------------------</p>
+    <input type="button" value="SORTEAR" onclick="Sortear()">
+    <div id="resp1">[-----------------------------]</div>
+    <div id="resp2">[-----------------------------]</div>
+    <div id="resp3">[-----------------------------]</div>
+    <p>---------------------------------------------------------------------------------</p>
+
+
+    <script>
+        function Sortear() {     
+            var c = 1
+            var S5 = 0
+            var S3 = 0
+            resp1.innerHTML = ``
+
+
+            while (c<=20) {
+                var NS = Math.floor(Math.random() * 11)
+                resp1.innerHTML += ` ${NS}..`
+                c=c+1
+                if (NS>5) {
+                    S5 = S5+1  
+                }
+                if (NS%3==0) {
+                    S3 = S3+1
+                }
+            }
+            resp2.innerHTML = `Quantos números estão acima de 5? <strong>${S5}<strong>`
+            resp3.innerHTML = `Quantos números são divisíveis por 3? <strong>${S3}</strong>`
+        }
+    </script>  
+</body>
+</html>

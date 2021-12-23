@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>090</title>
+
+    <style>
+        body {
+           font: normal 10pt Verdana; 
+        }
+        div {
+           margin-top: 15px; 
+        }
+    </style>
+
+</head>
+<body>
+    <p>---------------------------------------------------------------------------------</p>
+    <h1>EXERCÍCIO 090:</h1>
+    <p>---------------------------------------------------------------------------------</p>
+    <p>FUNÇÕES:</p>
+    <p>---------------------------------------------------------------------------------</p>
+    <p>Clique abaixo para iniciar:</p>
+    <p>---------------------------------------------------------------------------------</p>
+    <p><input type="button" value="START" onclick="Gerador()"></p>
+    <p>---------------------------------------------------------------------------------</p>
+    <div id="resp1">[-----------------------------]</div>
+    <div id="resp2">[-----------------------------]</div>
+    <div id="resp3">[-----------------------------]</div>
+    <p>---------------------------------------------------------------------------------</p>
+
+
+    <script>
+        function Gerador() {
+            var N1 = Number(window.prompt("1º NÚMERO: "))
+            var N2 = Number(window.prompt("2º NÚMERO: "))
+
+            resp1.innerHTML = `1º NÚMERO: ${N1}`
+            resp2.innerHTML = `2º NÚMERO: ${N2}`
+            resp3.innerHTML = `SOMA: ${N1} + ${N2} = ${N1+N2}`
+  
+        }
+    </script>  
+</body>
+</html>

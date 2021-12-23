@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONTAGEM</title>
+
+    <style>
+        body {
+           font: normal 10pt Verdana; 
+        }
+        div {
+           margin-top: 15px; 
+        }
+    </style>
+
+</head>
+<body>
+    <h1>CONTAGEM:</h1>
+    <p>---------------------------------------------------------------------------------</p>
+    <p>Clique abaixo para contar de 30 até 1 de 1 em 1 com os múltiplos de 4 destacados.</p>
+    <p>---------------------------------------------------------------------------------</p>
+    <input type="button" value="CONTAR" onclick="Contar()">
+    <div id="resp">[-----------------------------]</div>
+    <p>---------------------------------------------------------------------------------</p>
+
+
+    <script>
+        function Contar() {
+            var c = 30
+            resp.innerHTML = ``
+
+            while (c>=1) {
+                if (c%4==0) {
+                    resp.innerHTML += ` <strong>${c}</strong>..`
+                } else {
+                    resp.innerHTML += ` ${c}..`
+                }
+                c=c-1
+            }
+            resp.innerHTML += ` FIM!`
+
+
+        }
+    </script>  
+</body>
+</html>

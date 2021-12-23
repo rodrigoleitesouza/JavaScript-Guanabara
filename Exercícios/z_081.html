@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>081</title>
+
+    <style>
+        body {
+           font: normal 10pt Verdana; 
+        }
+        div {
+           margin-top: 15px; 
+        }
+    </style>
+
+</head>
+<body>
+    <h1>VETOR E ARRAY:</h1>
+    <p>---------------------------------------------------------------------------------</p>
+    <p>Clique abaixo para adicionar algumas idades:</p>
+    <p>---------------------------------------------------------------------------------</p>
+    <input type="button" value="START" onclick="Contar()">
+    <div id="resp1">[-----------------------------]</div>
+    <div id="resp2">[-----------------------------]</div>
+    <div id="resp3">[-----------------------------]</div>
+    <div id="resp4">[-----------------------------]</div>
+    <p>---------------------------------------------------------------------------------</p>
+
+
+    <script>
+        function Contar() {
+            var SI = 0
+            var MI = 0
+            var MaiorI = 0
+            var idade = []
+            var c = 0
+            resp2.innerHTML = ` `
+
+                for (c;c<=7;c++) {
+                    idade.push(Number(window.prompt(`${c+1}ª Idade: `)))
+
+                    SI=SI+idade[c]
+                    
+
+                    if (idade[c]>25) {
+                        resp2.innerHTML += ` <strong>${c}</strong>..`
+                    }
+
+                    if (MaiorI<idade[c]) {
+                        MaiorI=idade[c]
+                        resp4.innerHTML = `Em que posição está a maior idade digitada? <strong>${c}</strong>`
+
+                    }
+                } 
+                MI=SI/c
+                resp1.innerHTML = `Qual é a média de idade das pessoas cadastradas? <strong>${MI.toFixed(2)}</strong>`
+                resp1.style.background = "magenta"
+                resp2.style.background = "yellow"
+                resp3.innerHTML = `Qual é a maior idade digitada? <strong>${MaiorI}</strong>`
+                resp3.style.background = "magenta"
+                resp4.style.background = "yellow"
+        }
+    </script>  
+</body>
+</html>

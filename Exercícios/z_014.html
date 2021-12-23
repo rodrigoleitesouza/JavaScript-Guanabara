@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            font: normal 20pt Verdana; 
+
+        }
+    </style>
+
+</head>
+<body>
+    <script>
+        var km = Number(window.prompt("Qts kilometros foram percorridos? "));
+        var dias = Number(window.prompt("Qts dias o carro ficou alugado? "));
+        var PT = (km*0,2)+(dias*90)
+
+        document.write("========================================================<br/>");
+        document.write(`Kilômetros percorridos: ${km}<br/>`);
+        document.write(`Dias alugado: ${dias}<br/>`);
+        document.write("========================================================<br/>");
+        document.write(`Preço total a pagar: ${PT.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}<br/>`);
+        document.write("========================================================<br/>");
+    </script>
+</body>
+</html>

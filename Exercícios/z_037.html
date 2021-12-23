@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALUGUEL</title>
+
+    <style>
+        body {
+           font: normal 10pt Verdana; 
+        }
+        div {
+           margin-top: 15px; 
+        }
+    </style>
+
+</head>
+<body>
+    <h1>Alguel de carros:</h1>
+    <p>---------------------------------------------------------------------------------</p>
+    <p>Preencha os campos abaixo para determinar o pagamento:</p>
+    <p>---------------------------------------------------------------------------------</p>
+    
+    <p>Salário Atual (R$): <input type="number" name="salario" id="salario"></p>
+    <p>Tempos de empresa (anos): <input type="number" name="tempo" id="tempo"></p>
+    <p>Sexo: 
+        <input type="radio" name="sexo" id="masc" checked width="10px">
+        <label for="popular">Masculino</label>
+        <input type="radio" name="sexo" id="femi" width="10px">
+        <label for="luxo">Feminino</label></p>
+    <p>
+    <p>---------------------------------------------------------------------------------</p>
+    <input type="button" value="CALCULAR" onclick="Calcular()">
+    <div id="resp1">[-----------------------------]</div>
+    <p>---------------------------------------------------------------------------------</p>
+
+
+    <script>
+        function Calcular() {
+            var salario = Number(window.document.getElementById("salario").value) 
+            var tempo = Number(window.document.getElementById("tempo").value) 
+            var sexo = window.document.getElementsByName("sexo")
+
+            if (sexo[0].checked && tempo<20) {
+                var NS = (salario*1.03)
+                resp1.innerHTML = `[Novo Salário: ${NS.toFixed(2)}]`
+                resp1.style.background = "yellow"
+            } else if (sexo[0].checked && tempo<=20) {
+                var NS = (salario*1.13)
+                resp1.innerHTML = `[Novo Salário: ${NS.toFixed(2)}]`
+                resp1.style.background = "yellow"
+            } else if (sexo[0].checked && tempo>30) {
+                var NS = (salario*1.25)
+                resp1.innerHTML = `[Novo Salário: ${NS.toFixed(2)}]`
+                resp1.style.background = "yellow"
+            } else if (sexo[1].checked && tempo<15) {
+                var NS = (salario*1.05)
+                resp1.innerHTML = `[Novo Salário: ${NS.toFixed(2)}]`
+                resp1.style.background = "yellow"
+            } else if (sexo[1].checked && tempo<=20) {
+                var NS = (salario*1.12)
+                resp1.innerHTML = `[Novo Salário: ${NS.toFixed(2)}]`
+                resp1.style.background = "yellow"
+            } else if (sexo[1].checked && tempo>20) {
+                var NS = (salario*1.23)
+                resp1.innerHTML = `[Novo Salário: ${NS.toFixed(2)}]`
+                resp1.style.background = "yellow"
+            } 
+        }
+    </script>  
+</body>
+</html>

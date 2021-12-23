@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMC</title>
+
+    <style>
+        body {
+           font: normal 10pt Verdana; 
+        }
+        input {
+           font: normal 8pt Verdana; 
+           width: 100px;
+        }
+        div {
+           margin-top: 15px; 
+        }
+    </style>
+
+</head>
+<body>
+    <h1>Índice de Massa Corpônea (IMC):</h1>
+    <p>---------------------------------------------------------------------------------</p>
+    <p>Preencha os campos abaixo para determinar seu IMC:</p>
+    <p>---------------------------------------------------------------------------------</p>
+    <p>Altura (cm): <input type="number" name="alt" id="alt"></p>
+    <p>Peso (kg): <input type="number" name="peso" id="peso"></p>
+    <p>---------------------------------------------------------------------------------</p>
+    <input type="button" value="CALCULAR" onclick="IMC()">
+    <div id="resp1">[-----------------------------]</div>
+    <div id="resp2">[-----------------------------]</div>
+    <p>---------------------------------------------------------------------------------</p>
+
+
+    <script>
+        function IMC() {
+            var alt = Number(window.document.getElementById("alt").value) 
+            var peso = Number(window.document.getElementById("peso").value) 
+            var IMC = peso/((alt**2)/10000)
+            
+            if (IMC<18.5) {
+                resp1.innerHTML = `[IMC: ${IMC.toFixed(2)}]`
+                resp1.style.background = "yellow"
+                resp2.innerHTML = `[Magreza]`
+                resp2.style.background = "magenta"
+            } else if (IMC<=25) {
+                resp1.innerHTML = `[IMC: ${IMC.toFixed(2)}]`
+                resp1.style.background = "yellow"
+                resp2.innerHTML = `[Normal]`
+                resp2.style.background = "magenta"
+            } else if (IMC<=30) {
+                resp1.innerHTML = `[IMC: ${IMC.toFixed(2)}]`
+                resp1.style.background = "yellow"
+                resp2.innerHTML = `[Sobrepeso]`
+                resp2.style.background = "magenta"
+            } else if (IMC<=40) {
+                resp1.innerHTML = `[IMC: ${IMC.toFixed(2)}]`
+                resp1.style.background = "yellow"
+                resp2.innerHTML = `[Obesidade]`
+                resp2.style.background = "magenta"
+            } else if (IMC>40) {
+                resp1.innerHTML = `[IMC: ${IMC.toFixed(2)}]`
+                resp1.style.background = "yellow"
+                resp2.innerHTML = `[Obesidade Mórbida]`
+                resp2.style.background = "magenta"
+            }
+        }
+    </script>  
+</body>
+</html>

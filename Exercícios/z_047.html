@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONTAGEM</title>
+
+    <style>
+        body {
+           font: normal 10pt Verdana; 
+        }
+        div {
+           margin-top: 15px; 
+        }
+    </style>
+
+</head>
+<body>
+    <h1>CONTAGEM:</h1>
+    <p>---------------------------------------------------------------------------------</p>
+    <p>Clique abaixo para contar e somar:</p>
+    <p>---------------------------------------------------------------------------------</p>
+    <input type="button" value="CONTAR" onclick="Contar()">
+    <div id="resp">[-----------------------------]</div>
+    <div id="resp2">[-----------------------------]</div>
+    <p>---------------------------------------------------------------------------------</p>
+
+
+    <script>
+        function Contar() {
+            var c = 500
+            var soma = 0
+            resp.innerHTML = ``
+
+
+            while (c>=0) {
+                resp.innerHTML += ` ${c}..`
+                soma=soma+c
+                c=c-50
+            }
+            resp.innerHTML += ` FIM!`
+            resp2.innerHTML = `Somatório: ${soma}`
+        }
+    </script>  
+</body>
+</html>

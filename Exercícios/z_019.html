@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MÉDIA</title>
+
+    <style>
+        body {
+           font: normal 10pt Verdana; 
+        }
+        input {
+           font: normal 8pt Verdana; 
+           width: 100px;
+        }
+        div {
+           margin-top: 25px; 
+        }
+    </style>
+
+</head>
+<body>
+    <h1>CALCULO DE MÉDIA:</h1>
+    <p>Nome: <input type="text" name="nome" id="nome"></p> 
+    <p>Nota AV1: <input type="number" name="AV1" id="AV1"></p>
+    <p>Nota AV2: <input type="number" name="AV2" id="AV2"></p>
+    <input type="button" value="CALCULAR" onclick="Calcular()">
+    <div id="media">[-----------------------------]</div>
+    <div id="resp">[-----------------------------]</div>
+
+    <script>
+        function Calcular() {
+            var AV1 = Number(window.document.getElementById("AV1").value)
+            var AV2 = Number(window.document.getElementById("AV2").value)
+            var med = ((AV1+AV2)/2)
+            var resp = window.document.getElementById("resp")
+            var media = window.document.getElementById("media")
+            if (med>=7) {
+                media.innerHTML = `[Média: ${med}]`   
+                resp.innerHTML = `[Você teve um bom aproveitamento, pois ${med} >= 7]`    
+            } else {
+                media.innerHTML = `[Média: ${med}]`  
+                resp.innerHTML = `[Você <strong>NÃO</strong> teve um bom aproveitamento, pois ${med} < 7]`       
+            }
+        }
+    </script>  
+</body>
+</html>

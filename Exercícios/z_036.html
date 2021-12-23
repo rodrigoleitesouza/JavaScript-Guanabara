@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade Físoca</title>
+
+    <style>
+        body {
+           font: normal 10pt Verdana; 
+        }
+        div {
+           margin-top: 15px; 
+        }
+    </style>
+
+</head>
+<body>
+    <h1>Atividade física para ganhar grana:</h1>
+    <p>---------------------------------------------------------------------------------</p>
+    <p>Preencha os campos abaixo para determinar quando você irá ganhar:</p>
+    <p>---------------------------------------------------------------------------------</p>
+    <p>Qtd de horas de atividade física por mês: <input type="number" name="tempo" id="tempo"></p>
+    <p>---------------------------------------------------------------------------------</p>
+    <input type="button" value="CALCULAR" onclick="Calcular()">
+    <p>---------------------------------------------------------------------------------</p>
+    <div id="resp1">[-----------------------------]</div>
+    <div id="resp2">[-----------------------------]</div>
+    <p>---------------------------------------------------------------------------------</p>
+
+
+    <script>
+        function Calcular() {
+            var tempo = Number(window.document.getElementById("tempo").value) 
+            var resp1 = window.document.getElementById("resp1") 
+            resp1.innerHTML = `[Total de horas: ${tempo}]`
+            resp1.style.background = "yellow"
+
+            if (tempo<=10) {
+                var pontos = (tempo*2)
+            } else if (tempo<=20) {
+                var pontos = (tempo*5)    
+            } else if (tempo>20) {
+                var pontos = (tempo*10)  
+            }
+            var grana = (pontos*0.05)
+            resp2.innerHTML = `[Total de dinheiro: ${grana} centavos]`
+            resp2.style.background = "magenta"
+        }
+    </script>  
+</body>
+</html>

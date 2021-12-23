@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            font: normal 20pt Verdana; 
+
+        }
+    </style>
+
+</head>
+<body>
+    <script>
+        var QC = Number(window.prompt("Quantos cigarros você fuma por dia? "));
+        var QA = Number(window.prompt("Há quantos anos você fuma? "));
+        var QDP = (((365*QA*QC)*(1/6))/24)
+
+        document.write("========================================================<br/>");
+        document.write(`Cigarros fumados por dia: ${QC}<br/>`);
+        document.write(`Anos fumando: ${QA}<br/>`);
+        document.write("========================================================<br/>");
+        document.write(`Você já perdeu ${QDP.toFixed(0)} dias de vida :(<br/>`);
+        document.write("========================================================<br/>");
+    </script>
+</body>
+</html>

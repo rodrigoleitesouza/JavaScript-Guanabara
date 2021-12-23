@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOMATÓRIO</title>
+
+    <style>
+        body {
+           font: normal 10pt Verdana; 
+        }
+        input {
+           font: normal 8pt Verdana; 
+           width: 100px;
+        }
+        div {
+           margin-top: 15px; 
+        }
+    </style>
+
+</head>
+<body>
+    <h1>SOMATÓRIO INFINITO:</h1>
+    <p>---------------------------------------------------------------------------------</p>
+    <p>Segue o somatório abaixo:</p>
+    <p>---------------------------------------------------------------------------------</p>
+    <input type="button" value="JOGAR" onclick="Jogar()">
+    <div id="resp1">[-----------------------------]</div>
+    <p>---------------------------------------------------------------------------------</p>
+
+
+    <script>
+        var c = 1
+        
+        
+
+        function Jogar() {
+            var S = 0
+            
+
+            while (c<=99999) {
+                var num = Number(window.prompt(`${c}ª número: `))
+                S=S+num
+                c=c+1
+                if (num==1111) {
+                resp1.innerHTML = `Somatório: ${S}`
+                resp1.style.background = "yellow"
+                return
+                }
+                
+            }
+            
+        }
+    </script>  
+</body>
+</html>

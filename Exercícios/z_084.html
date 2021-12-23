@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>084</title>
+
+    <style>
+        body {
+           font: normal 10pt Verdana; 
+        }
+        div {
+           margin-top: 15px; 
+        }
+    </style>
+
+</head>
+<body>
+    <h1>VETOR E ARRAY:</h1>
+    <p>---------------------------------------------------------------------------------</p>
+    <p>Clique abaixo para iniciar:</p>
+    <p>---------------------------------------------------------------------------------</p>
+    <input type="button" value="START" onclick="Contar()">
+    <div id="resp1">[-----------------------------]</div>
+    <p>---------------------------------------------------------------------------------</p>
+
+
+    <script>
+        function Contar() {
+            var c = 0
+            var nome = []
+            var idade = []
+            resp1.innerHTML = ` `
+
+
+                for (c;c<=8;c++) {
+                    nome.push(window.prompt(`${c+1}º nome: `))  
+                    idade.push(Number(window.prompt(`${c+1}º idade: `)))   
+
+                    if (idade[c]<18) {
+                    resp1.innerHTML += `Nome: <strong>${nome[c]}</strong> / Idade: <strong>${idade[c]}</strong></br>` 
+                    resp1.style.background = "yellow"
+                    }
+                }
+
+
+                
+        }
+    </script>  
+</body>
+</html>

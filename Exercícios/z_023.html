@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIA DA MULHER</title>
+
+    <style>
+        body {
+           font: normal 10pt Verdana; 
+        }
+        input {
+           font: normal 8pt Verdana; 
+           width: 100px;
+        }
+        div {
+           margin-top: 25px; 
+        }
+    </style>
+
+</head>
+<body>
+    <h1>DIA DAS MULHERES:</h1>
+    <p>Preencha abaixo e receba descontos:</p>
+    <p>Nome: <input type="text" name="nome" id="nome"></p>
+    <p>
+        Sexo[F/M]: <input type="text" name="sexo" id="sexo">
+    </p>
+    <p>Preço: <input type="number" name="prec" id="prec"></p>
+    <input type="button" value="VERIFICAR" onclick="CALCULAR()">
+    <div id="resp">[-----------------------------]</div>
+
+    <script>
+        function CALCULAR() {
+            var prec = Number(window.document.getElementById("prec").value)
+            var resp = window.document.getElementById("resp")
+            var sexo = window.document.getElementById("sexo").value
+            if (sexo=="M") {
+                var PD = (prec*0.95)
+                resp.innerHTML = `[Você tem 5% de desconto e irá pagar ${PD.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}]`  
+                resp.style.background = "yellow"  
+            } else if (sexo=="F") {
+                var PD = (prec*0.87)
+                resp.innerHTML = `[Você tem 13% de desconto e irá pagar ${PD.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}]`  
+                resp.style.background = "pink"         
+            } else {
+                resp.innerHTML = `[ERROR //// OPÇÃO INVÁLIDA]`
+                resp.style.background = "grey"
+            }
+        }
+    </script>  
+</body>
+</html>

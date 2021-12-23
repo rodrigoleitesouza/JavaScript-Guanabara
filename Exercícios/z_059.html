@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IDADES</title>
+
+    <style>
+        body {
+           font: normal 10pt Verdana; 
+        }
+        input {
+           font: normal 8pt Verdana; 
+           width: 100px;
+        }
+        div {
+           margin-top: 15px; 
+        }
+    </style>
+
+</head>
+<body>
+    <h1>IDADES:</h1>
+    <p>---------------------------------------------------------------------------------</p>
+    <p>Clique abaixo para determinar as idades inseridas:</p>
+    <p>---------------------------------------------------------------------------------</p>
+    <input type="button" value="Começar" onclick="Calcular()">
+    <div id="resp1">[-----------------------------]</div>
+    <div id="resp2">[-----------------------------]</div>
+    <div id="resp3">[-----------------------------]</div>
+    <div id="resp4">[-----------------------------]</div>
+    <p>---------------------------------------------------------------------------------</p>
+
+
+    <script>
+        var c = 1
+        
+        
+
+        function Calcular() {
+            var SIM = 0
+            var MIM = 0
+            var MaiorI = 0
+            var QM = 0
+            var MMJ = 9999
+            
+            while (c<=999999999) {
+                var idade = Number(window.prompt(`${c}ª Idade: `))
+                var sexo = window.prompt(`${c}ª Sexo [F/M]: `)
+                var final = window.prompt(`Gostaria de encerrar? [S/N] `)  
+
+                if (MaiorI<idade) {
+                    MaiorI=idade
+                }   
+                
+                if (sexo=="M") {
+                    QM=QM+1
+                    SIM=SIM+idade
+                    MIM=SIM/QM
+                }
+
+                if (sexo=="F" && MMJ>idade) {
+                    MMJ=idade
+                }
+                
+                if (final=="S") {
+                resp1.style.background = "green"
+                resp2.style.background = "magenta"
+                resp3.style.background = "red"
+                resp4.style.background = "yellow"
+                resp1.innerHTML = `Maior idade lida? <strong>${MaiorI}</strong>`
+                resp2.innerHTML = `Quantos homens foram cadastrados? <strong>${QM}</strong>`
+                resp3.innerHTML = `Idade da mulher mais jovem? <strong>${MMJ}</strong>`
+                resp4.innerHTML = `Média da idade entre os homens? <strong>${MIM}</strong>`
+                return
+                }
+
+                
+                c=c+1  
+            } 
+        }
+    </script>  
+</body>
+</html>

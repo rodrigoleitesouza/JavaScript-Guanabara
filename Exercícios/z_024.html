@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PREÇO DA PASSAGEM</title>
+
+    <style>
+        body {
+           font: normal 10pt Verdana; 
+        }
+        input {
+           font: normal 8pt Verdana; 
+           width: 100px;
+        }
+        div {
+           margin-top: 25px; 
+        }
+    </style>
+
+</head>
+<body>
+    <h1>PREÇO DA PASSAGEM:</h1>
+    <p>Digite abaixo a distância (km) que deseja percorrer:</p>
+    <p>Distância (km): <input type="number" name="dist" id="dist"></p>
+    <input type="button" value="CALCULAR" onclick="CALCULAR()">
+    <div id="resp">[-----------------------------]</div>
+
+    <script>
+        function CALCULAR() {
+            var dist = Number(window.document.getElementById("dist").value)
+            var resp = window.document.getElementById("resp")
+            if (dist<=200) {
+                var preco = (dist*0.50)
+                resp.innerHTML = `[Total a pagar: ${preco.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}]`  
+                resp.style.background = "yellow"  
+            } else {
+                var preco = (dist*0.45)
+                resp.innerHTML = `[Total a pagar: ${preco.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}]`  
+                resp.style.background = "pink"         
+            }
+        }
+    </script>  
+</body>
+</html>

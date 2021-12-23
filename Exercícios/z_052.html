@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IDADE</title>
+
+    <style>
+        body {
+           font: normal 10pt Verdana; 
+        }
+        div {
+           margin-top: 15px; 
+        }
+    </style>
+
+</head>
+<body>
+    <h1>LEITOR DE IDADES:</h1>
+    <p>---------------------------------------------------------------------------------</p>
+    <p>Clique abaixo para descobrir algumas curiosidades sobre as idades digitadas:</p>
+    <p>---------------------------------------------------------------------------------</p>
+    <input type="button" value="CLIQUE AQUI" onclick="Contar()">
+    <p>---------------------------------------------------------------------------------</p>
+    <div id="resp0">[-----------------------------]</div>
+    <p>---------------------------------------------------------------------------------</p>
+    <div id="resp1">[-----------------------------]</div>
+    <div id="resp2">[-----------------------------]</div>
+    <div id="resp3">[-----------------------------]</div>
+    <div id="resp4">[-----------------------------]</div>
+    <p>---------------------------------------------------------------------------------</p>
+
+
+    <script>
+        function Contar() {
+            var c = 1
+            var SI = 0
+            var M18 = 0
+            var M5 = 0
+            var MIdade = 0
+            resp0.innerHTML = ` `
+            while (c<=10) {
+                var idade = Number(window.prompt(`${c}º Idade: `))
+                resp0.innerHTML += ` ${idade}..`
+                var SI = (SI+idade)
+                var MI = (SI/c)
+                if (idade>18) {
+                    M18=M18+1
+                } else if (idade<5) {
+                    M5=M5+1
+                }
+                if (MIdade<idade) {
+                    MIdade=idade
+                }
+                c=c+1
+            }
+            
+            resp1.innerHTML = `Média das Idades: <strong>${MI}</strong> ano(s)`
+            resp2.innerHTML = `Maiores de 18 anos: <strong>${M18}</strong> pessoa(s)`
+            resp3.innerHTML = `Menores de 5 anos: <strong>${M5}</strong> pessoa(s)`
+            resp4.innerHTML = `Maior idade digitada: <strong>${MIdade}</strong> ano(s)`
+
+        }
+    </script>  
+</body>
+</html>
