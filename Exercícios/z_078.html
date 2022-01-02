@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>078</title>
+    <h1>Números usando Vetor/Array</h1>
+    <p><strong>--------------------------------------------------------------------</strong></p>
+    <p>Clique abaixo para escrever o vetor:</p>
+    <p><strong>--------------------------------------------------------------------</strong></p>
+    <p><input type="button" value="START" onclick="Contar()"></p>
+    <p><strong>--------------------------------------------------------------------</strong></p>
+    <div id="resp1">[--------------------]</div>
+    <p><strong>--------------------------------------------------------------------</strong></p>
+
+</head>
+<body>
+    <script>
+        function Contar() {
+            var c = 0
+            var v = []
+            resp1.innerHTML = ""
+
+            for (c;c<15;c++) {
+                v.push(window.prompt(`Posição ${c} --- Número: `))
+
+                if (v[c]%10==0) {
+                    resp1.innerHTML += `Posição ${c} / Número: ${v[c]}</br>`
+                } else {
+                    resp1.innerHTML += `Posição ? / Número: ${v[c]}</br>`
+                }
+                
+            }
+            
+            
+            
+        }
+    </script>
+</body>
+</html>

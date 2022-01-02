@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>068</title>
+    <h1>SEXO E PESO</h1>
+    <p><strong>--------------------------------------------------------------------</strong></p>
+    <p>Clique abaixo para começar:</p>
+    <p><strong>--------------------------------------------------------------------</strong></p>
+    <p><input type="button" value="START" onclick="Contar()"></p>
+    <p><strong>--------------------------------------------------------------------</strong></p>
+    <div id="resp1">[--------------------]</div>
+    <div id="resp2">[--------------------]</div>
+    <div id="resp3">[--------------------]</div>
+    <div id="resp4">[--------------------]</div>
+    <p><strong>--------------------------------------------------------------------</strong></p>
+
+</head>
+<body>
+    <script>
+        function Contar() {
+            var c = 1
+            var QF = 0
+            var SPF = 0
+            var MPF = 0
+            var QM100 = 0
+            var MPM = 0
+            resp1.innerHTML = ""
+
+            for (c;c<=8;c=c+1) {
+                var sexo = window.prompt(`${c}º Sexo [F/M]: `)
+                var peso = Number(window.prompt(`${c}º Peso (kg): `))
+
+                if (sexo=="F") {
+                    QF=QF+1
+                    SPF=SPF+peso
+                    MPF=SPF/QF
+                }
+
+                if (sexo=="M" && peso>100) {
+                    QM100=QM100+1
+                }
+
+                if (sexo=="M" && MPM<peso) {
+                    MPM=peso
+                }
+                resp1.innerHTML = `Quantas mulheres foram cadastradas? <strong>${QF}</strong> mulher(es)`
+                resp2.innerHTML = `Quantos homens pesam mais de 100Kg? <strong>${QM100}</strong> homem(ns)`
+                resp3.innerHTML = `A média de peso entre as mulheres: <strong>${MPF}</strong> kilos`
+                resp4.innerHTML = `O maior peso entre os homens? <strong>${MPM}</strong> kilos`
+            }
+        }
+
+        
+    </script>
+</body>
+</html>

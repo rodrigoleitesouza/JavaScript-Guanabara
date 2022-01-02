@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>070</title>
+    <h1>FIBONACCI</h1>
+    <p><strong>--------------------------------------------------------------------</strong></p>
+    <p>Clique abaixo para escrever os 10 primeiros termos da sequência de Fibonacci:</p>
+    <p><strong>--------------------------------------------------------------------</strong></p>
+    <p><input type="button" value="START" onclick="Contar()"></p>
+    <p><strong>--------------------------------------------------------------------</strong></p>
+    <div id="resp1">[--------------------]</div>
+    <p><strong>--------------------------------------------------------------------</strong></p>
+
+</head>
+<body>
+    <script>
+        function Contar() {
+            var c = 1
+            var N1 = 1
+            var N2 = 1
+            var N3 = 0
+            resp1.innerHTML = ""
+            resp1.innerHTML = ` ${N3}..`
+
+
+            for (c;c<=20;c=c+1) {
+                N1=N2
+                N2=N3
+                N3=N2+N1
+                resp1.innerHTML += ` ${N3}..`
+            }
+        }
+    </script>
+</body>
+</html>

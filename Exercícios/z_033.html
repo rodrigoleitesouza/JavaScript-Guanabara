@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EMPRÉSTIMO</title>
+    <h1>EMPRÉSTIMO</h1>
+    <p>-------------------------------------------------------------------------------------</p>
+    <p>Digite abaixo o valor do imóvel:</p>
+    <p>-------------------------------------------------------------------------------------</p>
+    <p>Valor do Imóvel (R$): <input type="number" name="valor" id="valor"></p>
+    <p>Salário (R$) do Comprador: <input type="number" name="salario" id="salario"></p>
+    <p>Em quantos anos deseja pagar? <input type="number" name="tempo" id="tempo"></p>
+    <p>-------------------------------------------------------------------------------------</p>
+    <p><input type="button" value="VERIFICAR" onclick="verificar()"></p>
+    <div id="resp1">[--------------------]</div>
+    <div id="resp2">[--------------------]</div>
+    <p>-------------------------------------------------------------------------------------</p>
+
+</head>
+<body>
+    <script>
+        function verificar() {
+            var VI = Number(document.getElementById("valor").value)
+            var salario = Number(document.getElementById("salario").value)
+            var tempo = Number(document.getElementById("tempo").value)
+            var resp1 = document.getElementById("resp1")
+            var resp2 = document.getElementById("resp2")
+            var PM = (VI/(12*tempo))
+            var X = (salario*0.3)
+
+            if (PM>X) {
+                resp1.innerHTML = `Parcela Mensal: ${PM}`
+                resp2.innerHTML = `[Empréstimo <strong>NEGADO</strong>]`
+                resp2.style.background = "yellow"
+            } else if (X>=PM) { 
+                resp1.innerHTML = `Parcela Mensal: ${PM}`
+                resp2.innerHTML = `[Empréstimo <strong>APROVADO</strong>]`
+                resp2.style.background = "yellow"
+            }
+        }
+
+        
+    </script>
+</body>
+</html>

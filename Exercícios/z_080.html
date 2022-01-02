@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>080</title>
+    <h1>Números usando Vetor/Array</h1>
+    <p><strong>--------------------------------------------------------------------</strong></p>
+    <p>Clique abaixo para escrever o vetor:</p>
+    <p><strong>--------------------------------------------------------------------</strong></p>
+    <p><input type="button" value="START" onclick="Contar()"></p>
+    <p><strong>--------------------------------------------------------------------</strong></p>
+    <div id="resp0">[--------------------]</div>
+    <p><strong>--------------------------------------------------------------------</strong></p>
+    <div id="resp1">[--------------------]</div>
+    <p><strong>--------------------------------------------------------------------</strong></p>
+    <div id="resp2">[--------------------]</div>
+    <p><strong>--------------------------------------------------------------------</strong></p>
+
+</head>
+<body>
+    <script>
+        function Contar() {
+            var c = 0
+            var v = []
+            var QP = 0
+            resp0.innerHTML = ""
+            resp1.innerHTML = ""
+            var p = window.prompt("Digite seu palpite: ")
+
+            for (c;c<30;c++) {
+                v.push(Math.floor(Math.random() * 15+1))
+                resp0.innerHTML += ` ${v[c]}..`
+
+                if (p==v[c]) {
+                    QP=QP+1
+                    resp1.innerHTML += `O palpite ${p} está na posição ${c}.</br>`
+                } 
+            }
+            resp2.innerHTML = `O palpite foi sorteado ${QP} vezes.`
+        }
+    </script>
+</body>
+</html>

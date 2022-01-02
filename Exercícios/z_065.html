@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>065</title>
+    <h1>CONTAGEM</h1>
+    <p><strong>--------------------------------------------------------------------</strong></p>
+    <p>Clique abaixo para contar:</p>
+    <p><strong>--------------------------------------------------------------------</strong></p>
+    <p><input type="button" value="START" onclick="Contar()"></p>
+    <div id="resp1">[--------------------]</div>
+    <p><strong>--------------------------------------------------------------------</strong></p>
+
+</head>
+<body>
+    <script>
+        function Contar() {
+            var c = 100
+            resp1.innerHTML = ""
+
+            for (c;c>=0;c=c-10) {
+                resp1.innerHTML += ` ${c}..`
+            }
+            resp1.innerHTML += " FIM!"
+
+        }
+
+        
+    </script>
+</body>
+</html>

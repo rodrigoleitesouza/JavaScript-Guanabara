@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>066</title>
+    <h1>TABUADA</h1>
+    <p><strong>--------------------------------------------------------------------</strong></p>
+    <p>Digite um número abaixo para saber a tabuada:</p>
+    <p>Número: <input type="number" name="num" id="num"></p>
+    <p><strong>--------------------------------------------------------------------</strong></p>
+    <p><input type="button" value="START" onclick="Tabuada()"></p>
+    <p><strong>--------------------------------------------------------------------</strong></p>
+    <div id="resp1">[--------------------]</div>
+    <p><strong>--------------------------------------------------------------------</strong></p>
+
+</head>
+<body>
+    <script>
+        function Tabuada() {
+            var c = 1
+            var num = Number(document.getElementById("num").value)
+            resp1.innerHTML = ""
+
+            for (c;c<=9;c=c+1) {
+                resp1.innerHTML += `${num} x ${c} = ${num*c}</br>`
+            }
+        }
+
+        
+    </script>
+</body>
+</html>

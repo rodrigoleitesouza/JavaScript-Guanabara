@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>063</title>
+    <h1>NÚMEROS</h1>
+    <p><strong>--------------------------------------------------------------------</strong></p>
+    <p>Clique no botão abaixo para começar:</p>
+    <p><strong>--------------------------------------------------------------------</strong></p>
+    <p><input type="button" value="START" onclick="Botao()"></p>
+    <div id="resp1">[--------------------]</div>
+    <div id="resp2">[--------------------]</div>
+    <div id="resp3">[--------------------]</div>
+    <div id="resp4">[--------------------]</div>
+    <p><strong>--------------------------------------------------------------------</strong></p>
+
+</head>
+<body>
+    <script>
+        function Botao() {
+            var c = 1
+            var S = 0
+            var MN = 999999999**9999999999999999999999999999999
+            var media = 0
+            var TP = 0
+
+            do {
+                var num = Number(window.prompt(`Digite o ${c}º número: `))
+                var final = window.prompt(`Gostaria de encerrar? [S/N]`)
+                S=S+num
+                media=S/c
+
+                if (MN>num) {
+                    MN=num
+                }
+
+                if (num%2==0) {
+                    TP=TP+1
+                }
+
+                
+                if (final=="S") {
+                    resp1.innerHTML = `Somatório: ${S}`
+                    resp1.style.background = "yellow"
+                    resp2.innerHTML = `Menor número: ${MN}`
+                    resp2.style.background = "grey"
+                    resp3.innerHTML = `Média: ${media.toFixed(2)}`
+                    resp3.style.background = "yellow"
+                    resp4.innerHTML = `Total de pares: ${TP}`
+                    resp4.style.background = "grey"
+                    return
+                }
+                c=c+1
+            } while (c<=99999999999)
+
+        }
+
+        
+    </script>
+</body>
+</html>

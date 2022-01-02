@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>069</title>
+    <h1>Progressão Aritmética</h1>
+    <p><strong>--------------------------------------------------------------------</strong></p>
+    <p>Digite abaixo o 1º termo da PA e sua razão:</p>
+    <p><strong>--------------------------------------------------------------------</strong></p>
+    <p>1º Termo: <input type="number" name="termo1" id="termo1"></p>
+    <p>Razão: <input type="number" name="razao" id="razao"></p>
+    <p><input type="button" value="START" onclick="Contar()"></p>
+    <p><strong>--------------------------------------------------------------------</strong></p>
+    <div id="resp1">[--------------------]</div>
+    <p><strong>--------------------------------------------------------------------</strong></p>
+    <div id="resp2">[--------------------]</div>
+    <p><strong>--------------------------------------------------------------------</strong></p>
+
+</head>
+<body>
+    <script>
+        function Contar() {
+            var t1 = Number(document.getElementById("termo1").value)
+            var rz = Number(document.getElementById("razao").value)
+            var c = t1
+            var S = 0
+            resp1.innerHTML = ""
+
+            for (t1;t1<=((rz*9)+c);t1=t1+rz) {
+                S=S+t1
+                resp1.innerHTML += ` ${t1}..</br>`
+                resp2.innerHTML = ` ${S}`
+            }
+        }
+    </script>
+</body>
+</html>
