@@ -1,4 +1,4 @@
-# explanation
+# JavaScript-Guanabara
 
 O presente repositório tem todos os códigos que desenvolvi durante meus estudos em JavaScript baseados no curso de JS do Guanabara.
 
