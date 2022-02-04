@@ -16,7 +16,7 @@ Segue abaixo os conhecimentos e as tecnologias desenvolvidas:
 - Variáveis e Tipos Primitivos;
 - Tratamento de Dados;
 - Operadores;
-- Condicionais Simples e Compostas
+- Condicionais Simples e Compostas;
 - Repetições;
 - Variáveis Compostas;
 - Funções;
