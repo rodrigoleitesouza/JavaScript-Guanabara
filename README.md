@@ -4,6 +4,16 @@ O presente repositório refere-se aos meus estudos e, também, a todos os códig
 
 Link para a playlist com todas as aulas: https://www.youtube.com/playlist?list=PLHz_AreHm4dlsK3Nr9GVvXCbpQyHQl1o1
 
+Segue abaixo os conhecimentos e as tecnologias desenvolvidas:
+
+------------------------------------------------------------------
+
+- Lógica de Programação;
+- JavaScript;
+- HTML;
+- CSS;
+- DOM.
+
 ------------------------------------------------------------------
 
 Qualquer dúvida entre em contato por <a href="mailto:rodrigoleitesouza@gmail.com?">rodrigoleitesouza@gmail.com</a>
