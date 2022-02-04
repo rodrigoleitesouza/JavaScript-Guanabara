@@ -12,7 +12,15 @@ Segue abaixo os conhecimentos e as tecnologias desenvolvidas:
 - JavaScript;
 - HTML;
 - CSS;
-- DOM.
+- DOM;
+- Variáveis e Tipos Primitivos;
+- Tratamento de Dados;
+- Operadores;
+- Condicionais Simples e Compostas
+- Repetições;
+- Variáveis Compostas;
+- Funções;
+- Vetores. 
 
 ------------------------------------------------------------------
 
